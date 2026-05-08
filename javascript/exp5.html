@@ -9,11 +9,12 @@ body {
   text-align: center;
 }
 .container {
-  width: 600px;
+  width: 1200px;
+  height: 800px; ;
   margin: 40px auto;
   padding: 20px;
   background: white;
-  border-radius: 10px;
+  border-radius: 100px;
   box-shadow: 0 0 10px gray;
 }
 input, button {
@@ -46,6 +47,8 @@ button {
 <button onclick="showEmployees()">Show</button>
 <button onclick="totalSalary()">Total</button>
 <button onclick="averageSalary()">Average</button>
+<button onclick="countDept()">Cout by Department</button>
+<button onclick="filterEmployes()">salary</button>
 
 <div id="output"></div>
 </div>
@@ -76,7 +79,7 @@ function showEmployees(){
   document.getElementById("output").innerHTML = out;
 }
 
-function totalSalary(){
+function totalSalary(){ 
   let total = 0;
   employees.forEach(e => total += e.salary);
   document.getElementById("output").innerHTML = "Total: " + total;
