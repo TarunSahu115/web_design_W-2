@@ -1,70 +1,19 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Student Result Calculator</title>
-<script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Result Calculator</title>
+     <link rel="stylesheet" href="exp4.css">
 </head>
-
-<body class="bg-gray-100 flex items-center justify-center min-h-screen">
-
-<div class="bg-white p-6 rounded-lg shadow w-full max-w-sm">
-  <h1 class="text-xl font-bold text-center mb-4">Result Calculator</h1>
-
-  <!-- Input -->
-  <label class="block mb-2">Number of Subjects:</label>
-  <input id="subjectCount" type="number" class="w-full p-2 border rounded mb-3" placeholder="Enter number">
-
-  <button onclick="calculateResult()" class="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600">
-    Calculate
-  </button>
-
-  <!-- Output -->
-  <div id="result" class="mt-4 text-center"></div>
+<body>
+      <div class="container">
+<h2>Student Result Calculator</h2>
+<label>Enter Number of Subjects</label>
+<input type="number" id="subjects" placeholder="Enter Number of Subjects"><br><br>
+<button onclick="calculateResult()">Calculate Result</button>
+<div id="result"></div>
 </div>
-
-<script>
-function calculateResult() {
-  let count = document.getElementById("subjectCount").value;
-
-  if (count <= 0 || count === "") {
-    alert("Enter valid number");
-    return;
-  }
-
-  let total = 0;
-
-  for (let i = 1; i <= count; i++) {
-    let marks = prompt("Enter marks for subject " + i);
-
-    if (marks === null || marks === "" || isNaN(marks)) {
-      alert("Invalid input");
-      return;
-    }
-
-    marks = Number(marks);
-    total += marks;
-  }
-
-  let average = total / count;
-  let grade;
-
-  if (average >= 75) grade = "A";
-  else if (average >= 60) grade = "B";
-  else if (average >= 50) grade = "C";
-  else grade = "F";
-
-  let resultStatus = (average >= 40) ? "Pass" : "Fail";
-
-  document.getElementById("result").innerHTML = `
-    Total: ${total} <br>
-    Average: ${average.toFixed(2)} <br>
-    Grade: ${grade} <br>
-    Result: ${resultStatus}
-  `;
-}
-</script>
-
+    <script src="exp4.js"></script>
 </body>
-</html>
+</html>=
